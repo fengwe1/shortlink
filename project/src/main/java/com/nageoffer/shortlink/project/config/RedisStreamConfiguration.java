@@ -17,7 +17,7 @@
 
 package com.nageoffer.shortlink.project.config;
 
-import com.nageoffer.shortlink.project.mq.consumer.ShortLinkStatsSaveConsumer;
+/*import com.nageoffer.shortlink.project.mq.consumer.ShortLinkStatsSaveConsumer;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -38,10 +38,10 @@ import java.util.concurrent.atomic.AtomicInteger;
 import static com.nageoffer.shortlink.project.common.constant.RedisKeyConstant.SHORT_LINK_STATS_STREAM_GROUP_KEY;
 import static com.nageoffer.shortlink.project.common.constant.RedisKeyConstant.SHORT_LINK_STATS_STREAM_TOPIC_KEY;
 
-/**
+*//**
  * Redis Stream 消息队列配置
  * 公众号：马丁玩编程，回复：加群，添加马哥微信（备注：link）获取项目资料
- */
+ *//*
 @Configuration
 @RequiredArgsConstructor
 public class RedisStreamConfiguration {
@@ -85,4 +85,4 @@ public class RedisStreamConfiguration {
                 StreamOffset.create(SHORT_LINK_STATS_STREAM_TOPIC_KEY, ReadOffset.lastConsumed()), shortLinkStatsSaveConsumer);
         return streamMessageListenerContainer;
     }
-}
+}*/

@@ -86,7 +86,8 @@ public class ShortLinkController {
      * 批量创建短链接
      */
     @PostMapping("/api/short-link/v1/create/batch")
-    public Result<ShortLinkBatchCreateRespDTO> batchCreateShortLink(@RequestBody ShortLinkBatchCreateReqDTO requestParam) {
+    public Result<ShortLinkBatchCreateRespDTO> batchCreateShortLink
+    (@RequestBody ShortLinkBatchCreateReqDTO requestParam) {
         return Results.success(shortLinkService.batchCreateShortLink(requestParam));
     }
 
@@ -111,7 +112,8 @@ public class ShortLinkController {
      * 查询短链接分组内数量
      */
     @GetMapping("/api/short-link/v1/count")
-    public Result<List<ShortLinkGroupCountQueryRespDTO>> listGroupShortLinkCount(@RequestParam("requestParam") List<String> requestParam) {
+    public Result<List<ShortLinkGroupCountQueryRespDTO>>
+    listGroupShortLinkCount(@RequestParam("requestParam") List<String> requestParam) {
         return Results.success(shortLinkService.listGroupShortLinkCount(requestParam));
     }
 }

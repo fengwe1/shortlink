@@ -36,6 +36,7 @@ import com.nageoffer.shortlink.admin.remote.dto.resp.ShortLinkGroupCountQueryRes
 import com.nageoffer.shortlink.admin.service.GroupService;
 import com.nageoffer.shortlink.admin.toolkit.RandomGenerator;
 import lombok.RequiredArgsConstructor;
+import lombok.SneakyThrows;
 import lombok.extern.slf4j.Slf4j;
 import org.redisson.api.RLock;
 import org.redisson.api.RedissonClient;
@@ -95,6 +96,7 @@ public class GroupServiceImpl extends ServiceImpl<GroupMapper, GroupDO> implemen
             lock.unlock();
         }
     }
+
 
     @Override
     public List<ShortLinkGroupRespDTO> listGroup() {

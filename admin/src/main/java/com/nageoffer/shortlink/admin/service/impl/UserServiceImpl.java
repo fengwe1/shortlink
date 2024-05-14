@@ -85,7 +85,7 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
 
     @Override
     public Boolean hasUsername(String username) {
-        return !userRegisterCachePenetrationBloomFilter.contains(username);
+        return Boolean.TRUE.equals(!userRegisterCachePenetrationBloomFilter.contains(username));
     }
 
     @Override
@@ -140,12 +140,12 @@ public class UserServiceImpl extends ServiceImpl<UserMapper, UserDO> implements 
                     .orElseThrow(() -> new ClientException("用户登录错误"));
             return new UserLoginRespDTO(token);
         }
-        /**
-         * Hash
-         * Key：login_用户名
-         * Value：
-         *  Key：token标识
-         *  Val：JSON 字符串（用户信息）
+        /*
+          Hash
+          Key：login_用户名
+          Value：
+           Key：token标识
+           Val：JSON 字符串（用户信息）
          */
         String uuid = UUID.randomUUID().toString();
         stringRedisTemplate.opsForHash().put(USER_LOGIN_KEY + requestParam.getUsername(), uuid, JSON.toJSONString(userDO));
